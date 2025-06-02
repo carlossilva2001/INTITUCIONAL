@@ -1,0 +1,409 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333; /* Cor de texto legível */
+    background-color: #f4f4f4; /* Cor de fundo suave */
+    padding-top: 80px; /* Adiciona padding no topo para compensar o header fixo, ajuste conforme a altura do seu header */
+}
+
+header {
+    background: #fff; /* Mudei para branco para destacar o logo e menu */
+    color: #333;
+    padding: 0.5rem 0; /* Reduzi o padding vertical */
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    position: fixed; /* Fixa o header no topo */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que o header fique sobre outros elementos */
+}
+
+header nav {
+    display: flex; /* Habilita flexbox */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    justify-content: space-between; /* Espaça o logo e a lista de links */
+    width: 90%; /* Define uma largura para o conteúdo da navegação */
+    margin: 0 auto; /* Centraliza o conteúdo da navegação */
+    max-width: 1200px; /* Define uma largura máxima */
+}
+
+.logo-container {
+    flex-shrink: 0; /* Impede que o logo encolha */
+}
+
+.logo {
+    height: 60px; /* Ajuste a altura do seu logo */
+    width: auto;
+    display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex; /* Organiza os itens do menu em linha */
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 25px; /* Aumentei o espaçamento e mudei para margin-left */
+    margin-right: 0; /* Removi margin-right para evitar duplicidade com margin-left do próximo item */
+}
+
+header nav ul li a {
+    color: #337ab7; /* Cor dos links do menu */
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+header nav ul li a:hover, header nav ul li a.active { /* Adiciona estilo para link ativo */
+    color: #23527c; /* Cor mais escura no hover/ativo */
+    text-decoration: underline;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden; /* Clear floats */
+    padding: 20px;
+    background-color: #fff; /* Fundo branco para o conteúdo principal */
+}
+
+main section {
+    padding: 20px 0;
+    border-bottom: 1px #ccc dotted;
+}
+
+main section:last-child {
+    border-bottom: none;
+}
+
+main section h1 { /* Estilo geral para H1 da seção */
+    color: #4CAF50; /* Verde para combinar com hortaliças */
+    margin-bottom: 10px; /* Ajustado para o novo layout */
+}
+
+main section h2 { /* Estilo geral para H2 da seção */
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.3em; /* Ajuste de tamanho para subtítulo */
+}
+
+/* Estilos para a seção de apresentação no index.html */
+.apresentacao-flex-container {
+    display: flex;
+    align-items: flex-start; /* Alinha os itens ao topo */
+    gap: 30px; /* Espaçamento entre o logo e o texto */
+    margin-bottom: 20px; /* Espaçamento antes do banner, se houver */
+}
+
+.apresentacao-logo-area {
+    flex-basis: 150px; /* Largura base para a área do logo */
+    flex-shrink: 0; /* Impede que a área do logo encolha */
+}
+
+.apresentacao-logo-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Mantém cantos arredondados se desejado para o logo */
+}
+
+.apresentacao-texto-area {
+    flex: 1; /* Permite que a área de texto ocupe o espaço restante */
+}
+
+.apresentacao-texto-area h1 {
+    margin-top: 0; /* Remove margem superior do H1 se estiver dentro do flex item */
+}
+
+.banner-apresentacao img {
+    display: block; /* Para centralizar com margin auto se necessário */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Estilo para imagens com cantos arredondados e qualidade */
+img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner pai */
+    height: auto;   /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Cantos arredondados */
+    /* Assegure-se de usar imagens PNG de boa qualidade para evitar pixelização */
+}
+
+/* Estilos para a página de produtos */
+.categoria-produtos {
+    margin-bottom: 40px;
+}
+
+.categoria-produtos h2 {
+    font-size: 1.8em;
+    color: #38761d; /* Um tom de verde mais escuro para os títulos das categorias */
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 20px; /* Ajustado para dar espaço ao scroll container */
+}
+
+/* Removendo ou comentando estilos antigos do .produtos-grid */
+/*
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; 
+    align-items: stretch; 
+}
+*/
+
+.produtos-scroll-container {
+    display: flex;
+    flex-direction: row; /* Organiza os cards em linha */
+    overflow-x: auto;   /* Habilita a rolagem horizontal */
+    overflow-y: hidden;  /* Esconde a rolagem vertical no container */
+    padding: 10px 0 5px 0; /* Espaçamento interno, reduzido abaixo pois a barra não será visível */
+    white-space: nowrap; 
+    -webkit-overflow-scrolling: touch; 
+
+    /* Esconder a barra de rolagem */
+    scrollbar-width: none; /* Para Firefox */
+    -ms-overflow-style: none;  /* Para Internet Explorer e Edge (versões mais antigas) */
+}
+
+/* Esconder a barra de rolagem para navegadores WebKit (Chrome, Safari, Edge novo, Opera) */
+.produtos-scroll-container::-webkit-scrollbar {
+    display: none; /* Ou width: 0; height: 0; */
+}
+
+/* Comentando a estilização anterior da barra de rolagem, já que ela será oculta
+.produtos-scroll-container::-webkit-scrollbar {
+    height: 10px; 
+}
+
+.produtos-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+.produtos-scroll-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+}
+
+.produtos-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+*/
+
+.produto-card {
+    background-color: #fff;
+    border: 1px solid #ddd; /* Mantido, pois o prompt não especifica borda, mas é comum */
+    border-radius: 8px;
+    padding: 1em; /* Alterado de 12px */
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07); /* Alterado */
+    transition: transform 0.3s ease, box-shadow 0.2s; /* Duração do box-shadow alterada */
+    
+    flex: 0 0 220px; /* Largura do card alterada (era 190px) */
+    margin-right: 15px; /* Espaçamento entre os cards (pode ajustar se necessário) */
+    display: flex; 
+    flex-direction: column;
+    align-items: center; /* Adicionado explicitamente */
+    min-height: 340px; /* Altura mínima ajustada para novas dimensões (era 320px) */
+}
+
+.produto-card:last-child {
+    margin-right: 0; /* Remove a margem do último card para não criar espaço extra no final da rolagem */
+}
+
+.produto-card:hover {
+    transform: translateY(-5px); /* Mantido o efeito de elevação */
+    box-shadow: 0 4px 16px rgba(0,129,49,0.13); /* Alterado */
+}
+
+.produto-card img {
+    width: 120px; /* Alterado de 100% */
+    height: 120px; /* Alterado de 140px */
+    object-fit: cover; 
+    border-radius: 6px;
+    margin-bottom: 0.7em; /* Alterado de 10px */
+}
+
+.produto-card h3 { /* Mapeia para .product-name do prompt */
+    font-weight: 600; /* Adicionado/Confirmado */
+    font-size: 1.05em; /* Mantido, ajuste se necessário */
+    color: #222; /* Alterado de #333 */
+    margin-bottom: 0.3em; /* Alterado de 8px */
+    min-height: 2.31em; /* Ajustado para ~2 linhas (1.05em * 1.1 * 2) */
+    line-height: 1.1em; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* text-align: center; já está no .produto-card */
+}
+
+.produto-card p {
+    font-size: 0.8em; 
+    color: #666;
+    line-height: 1.3; 
+    flex-grow: 1; 
+    margin-bottom: 0; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 3.12em; /* Mantido, ajuste se o conteúdo não se encaixar bem */
+    width: 100%; /* Garante que o parágrafo use a largura disponível dentro do padding */
+}
+
+/* Removendo estilo antigo de .produto se não for mais usado globalmente */
+/*
+.produto {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden; 
+}
+
+.produto img {
+    float: left; 
+    margin-right: 15px;
+    width: 150px; 
+    height: 150px;
+    object-fit: cover; 
+}
+*/
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 0.9em; /* Tamanho de fonte legível para o rodapé */
+}
+
+/* Boas práticas de responsividade */
+/* Exemplo de Media Query para telas menores */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Ajuste o padding para a altura do header em telas menores */
+    }
+
+    header nav {
+        flex-direction: column; /* Empilha logo e menu */
+        width: 100%;
+    }
+
+    .logo-container {
+        margin-bottom: 10px; /* Espaço entre logo e menu */
+    }
+    
+    .logo {
+        height: 50px; /* Logo menor em telas pequenas */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Itens do menu em coluna */
+        width: 100%;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 10px;
+        text-align: center; /* Centraliza os links do menu */
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .produto-card {
+        flex: 0 0 190px; /* Ajustado (era 170px) para ser proporcionalmente maior que antes */
+        min-height: 320px; /* Ajustado (era 300px) */
+        padding: 0.8em; /* Ajustado */
+    }
+
+    .produto-card img {
+        width: 100px; /* Ajustado */
+        height: 100px; /* Ajustado */
+        margin-bottom: 0.6em; /* Ajustado */
+    }
+
+    .produto-card h3 {
+        font-size: 1em; 
+        margin-bottom: 0.25em; /* Ajustado */
+        min-height: 2.2em; 
+        -webkit-line-clamp: 2;
+    }
+
+    .produto-card p {
+        font-size: 0.75em; 
+        min-height: 2.925em; 
+        -webkit-line-clamp: 3; 
+    }
+
+    .apresentacao-flex-container {
+        flex-direction: column; /* Empilha logo e texto */
+        align-items: center; /* Centraliza os itens empilhados */
+        text-align: center; /* Centraliza o texto */
+        gap: 20px;
+    }
+
+    .apresentacao-logo-area {
+        flex-basis: auto; /* Reseta a base flex */
+        width: 120px; /* Define uma largura para o logo quando empilhado */
+        margin-bottom: 10px;
+    }
+
+    .apresentacao-texto-area h1,
+    .apresentacao-texto-area h2 {
+        text-align: center; /* Garante que os títulos também fiquem centralizados */
+    }
+}
+
+@media (max-width: 480px) {
+    .produtos-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+
+    .apresentacao-logo-area {
+        width: 100px; /* Logo um pouco menor em telas muito pequenas */
+    }
+    
+    .produto-card {
+        flex: 0 0 170px; /* Ajustado (era 150px) */
+        min-height: 300px; /* Ajustado (era 280px) */
+    }
+    
+    .produto-card img {
+        width: 90px; /* Ajustado */
+        height: 90px; /* Ajustado */
+        margin-bottom: 0.5em;
+    }
+
+    .produto-card h3 {
+        font-size: 0.9em; 
+        margin-bottom: 0.2em;
+        min-height: 2em; 
+        -webkit-line-clamp: 2;
+    }
+    
+    .produto-card p {
+        font-size: 0.7em; 
+        min-height: 2.73em; 
+        -webkit-line-clamp: 3; 
+    }
+}
