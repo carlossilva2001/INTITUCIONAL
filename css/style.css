@@ -169,13 +169,13 @@ img {
     text-align: center;
     box-shadow: 0 1px 6px rgba(0,0,0,0.07); 
     transition: transform 0.3s ease, box-shadow 0.2s; 
-    flex: 0 0 290px; /* Largura do card alterada para 290px */
+    flex: 0 0 290px;
     margin-right: 15px; 
     display: flex; 
     flex-direction: column;
     align-items: center; 
-    height: 300px; /* Altura do card alterada para 300px */
-    overflow: hidden; /* Garante que o conteúdo não transborde o card com altura fixa */
+    height: 300px; 
+    overflow: hidden;
 }
 
 .produto-card:last-child {
@@ -188,8 +188,8 @@ img {
 }
 
 .produto-card img {
-    width: 120px; /* Mantido, ajuste se necessário para a nova altura do card */
-    height: 120px; /* Mantido, ajuste se necessário */
+    width: 120px; 
+    height: 120px; 
     object-fit: cover; 
     border-radius: 6px;
     margin-bottom: 0.7em;
@@ -200,33 +200,33 @@ img {
     font-size: 1.05em;
     color: #222;
     margin-bottom: 0.3em;
-    line-height: 1.2; /* Ajustado para melhor quebra de linha */
-    width: 100%; /* Garante que o h3 use a largura total disponível no card */
-    word-wrap: break-word; /* Força a quebra de palavras longas */
-    white-space: normal; /* Permite quebra de linha normal */
+    line-height: 1.2; 
+    width: 100%; 
+    word-wrap: break-word; 
+    white-space: normal; 
     display: -webkit-box; 
-    -webkit-line-clamp: 2; /* Mantém 2 linhas para o título */
+    -webkit-line-clamp: 2; 
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 2.52em; /* (1.05em * 1.2 * 2) */
+    min-height: 2.52em;
 }
 
 .produto-card p {
     font-size: 0.8em; 
     color: #666;
-    line-height: 1.4; /* Ajustado para melhor quebra de linha */
+    line-height: 1.4;
     flex-grow: 1;
     margin-bottom: 0; 
-    width: 100%; /* Garante que o p use a largura total disponível no card */
-    word-wrap: break-word; /* Força a quebra de palavras longas */
-    white-space: normal; /* Permite quebra de linha normal */
+    width: 100%; 
+    word-wrap: break-word; 
+    white-space: normal; 
     display: -webkit-box; 
-    -webkit-line-clamp: 4; /* Aumentado para 4 linhas para preencher melhor a altura */
+    -webkit-line-clamp: 4; 
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 4.48em; /* (0.8em * 1.4 * 4) */
+    min-height: 4.48em;
 }
 
 footer {
@@ -276,8 +276,8 @@ footer p {
     }
 
     .produto-card {
-        flex: 0 0 220px; /* Ajustado para ser menor que o desktop, mas proporcional */ 
-        height: 280px; /* Altura ajustada */
+        flex: 0 0 220px; 
+        height: 280px; 
         padding: 0.8em; 
     }
 
@@ -290,13 +290,13 @@ footer p {
     .produto-card h3 {
         font-size: 1em; 
         margin-bottom: 0.25em;
-        min-height: 2.4em; /* (1em * 1.2 * 2) */
+        min-height: 2.4em;
         -webkit-line-clamp: 2;
     }
 
     .produto-card p {
         font-size: 0.75em; 
-        min-height: 4.2em; /* (0.75em * 1.4 * 4) */
+        min-height: 4.2em;
         -webkit-line-clamp: 4; 
     }
 
@@ -329,8 +329,8 @@ footer p {
     }
     
     .produto-card {
-        flex: 0 0 190px; /* Ajustado */ 
-        height: 270px; /* Altura ajustada */
+        flex: 0 0 190px;
+        height: 270px;
     }
     
     .produto-card img {
@@ -342,13 +342,13 @@ footer p {
     .produto-card h3 {
         font-size: 0.9em; 
         margin-bottom: 0.2em;
-        min-height: 2.16em; /* (0.9em * 1.2 * 2) */
+        min-height: 2.16em;
         -webkit-line-clamp: 2;
     }
     
     .produto-card p {
         font-size: 0.7em; 
-        min-height: 3.92em; /* (0.7em * 1.4 * 4) */
+        min-height: 3.92em;
         -webkit-line-clamp: 4; 
     }
 }
